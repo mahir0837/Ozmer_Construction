@@ -4042,43 +4042,58 @@ ol, ul {
     background-color: #fff;
 }
 
-/* === Ozmer: logo badge + header polish === */
-/* === Ozmer Construction Header: Hero Banner Scale === */
+/* === Ozmer Construction Header: Large Mobile Fix === */
 :root {
-  --logo-h-desktop: 158px;   /* ultimate large desktop logo */
-  --logo-h-tablet: 132px;
-  --logo-h-mobile: 104px;
-  --logo-pad-y: 12px;
-  --logo-pad-x: 22px;
+  --logo-h-desktop: 160px;   /* large on desktop */
+  --logo-h-tablet: 140px;
+  --logo-h-mobile: 120px;    /* truly large on mobile */
+  --logo-pad-y: 8px;
+  --logo-pad-x: 18px;
 }
 
-/* Logo image styling */
+/* Remove all theme restrictions */
+.header-logo,
+.header-logo img,
+.logo,
+.site-logo img {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  image-rendering: auto !important;
+}
+
+/* Force the image to grow to your desired size */
 .header-logo img {
-  display: block;
-  height: auto;
-  max-height: var(--logo-h-desktop);
-  width: auto;
-  object-fit: contain;
-  image-rendering: auto;
-  margin-top: -3px; /* keeps perfect optical balance with menu */
+  max-height: var(--logo-h-desktop) !important;
 }
 
-/* Logo container */
+/* Center vertically in header */
 .header-logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+/* --- Mobile breakpoint --- */
+@media (max-width: 768px) {
+  .header-logo img {
+    max-height: var(--logo-h-mobile) !important;
+  }
+
+  .site-header {
+    padding: 10px 16px !important;
+  }
+}
+
+/* Optional: make menu button and search align nicely */
+.header-actions {
   display: flex;
   align-items: center;
-}
-
-/* Navbar text */
-.navbar a {
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  color: #bdbdbd;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover,
-.navbar a.active {
-  color: #ff5722;
+  gap: 12px;
 }
