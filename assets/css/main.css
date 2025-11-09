@@ -4043,57 +4043,54 @@ ol, ul {
 }
 
 /* === Ozmer Construction Header: Large Mobile Fix === */
-:root {
-  --logo-h-desktop: 160px;   /* large on desktop */
-  --logo-h-tablet: 140px;
-  --logo-h-mobile: 120px;    /* truly large on mobile */
-  --logo-pad-y: 8px;
-  --logo-pad-x: 18px;
-}
-
-/* Remove all theme restrictions */
-.header-logo,
-.header-logo img,
-.logo,
-.site-logo img {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  display: block !important;
-  width: auto !important;
-  height: auto !important;
-  max-width: none !important;
-  object-fit: contain !important;
-  image-rendering: auto !important;
-}
-
-/* Force the image to grow to your desired size */
-.header-logo img {
-  max-height: var(--logo-h-desktop) !important;
-}
-
-/* Center vertically in header */
-.header-logo {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-}
-
-/* --- Mobile breakpoint --- */
+/* ===== MOBILE: make header logo large & remove box ===== */
 @media (max-width: 768px) {
-  .header-logo img {
-    max-height: var(--logo-h-mobile) !important;
+  /* nuke theme limits & badge styles */
+  .header-logo,
+  .header-logo a,
+  .header-logo img,
+  .site-logo,
+  .site-logo a,
+  .site-logo img,
+  .logo,
+  .logo a,
+  .logo img {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    image-rendering: auto !important;
   }
 
-  .site-header {
+  /* give header enough height so logo isn't clipped */
+  .site-header,
+  .header,
+  .header-inner,
+  header[role="banner"] {
+    min-height: 140px !important;
     padding: 10px 16px !important;
+    align-items: center !important;
   }
-}
 
-/* Optional: make menu button and search align nicely */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  /* force the actual logo size on phones (tune here) */
+  .header-logo img,
+  .site-logo img,
+  .logo img {
+    height: 110px !important;
+    max-height: 110px !important; /* ↑ increase to make even bigger */
+    width: auto !important;
+  }
+
+  /* keep icons from crowding the logo */
+  .header-actions,
+  .nav-toggle,
+  .menu-toggle {
+    margin-left: 8px !important;
+  }
 }
