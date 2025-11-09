@@ -4043,55 +4043,42 @@ ol, ul {
 }
 
 /* === Ozmer: logo badge + header polish === */
-:root{
-  --logo-h-desktop: 52px;
-  --logo-h-tablet: 44px;
-  --logo-h-mobile: 36px;
-  --logo-pad-y: 6px;
-  --logo-pad-x: 10px;
+/* === Ozmer Construction Header: Hero Banner Scale === */
+:root {
+  --logo-h-desktop: 158px;   /* ultimate large desktop logo */
+  --logo-h-tablet: 132px;
+  --logo-h-mobile: 104px;
+  --logo-pad-y: 12px;
+  --logo-pad-x: 22px;
 }
 
-/* Slightly richer header so the badge blends */
-.header{
-  background: linear-gradient(180deg, #171717, #1c1c1c);
-  box-shadow: 0 1px 0 rgba(255,255,255,.05), 0 8px 24px rgba(0,0,0,.25);
-  padding: 10px 0;
-}
-.header__inner{ display:flex; align-items:center; gap:18px; }
-
-/* Badge wrapper */
-.header-logo a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: var(--logo-pad-y) var(--logo-pad-x);
-  border-radius: 12px;
-  background: rgba(255,255,255,.06);                 /* subtle translucent card */
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 2px 8px rgba(0,0,0,.25) inset, 0 2px 10px rgba(0,0,0,.15);
-  backdrop-filter: saturate(130%) blur(2px);
-}
-
-/* Image sizing (keeps aspect ratio) */
-.header-logo img{
-  display:block;
-  height:auto;
+/* Logo image styling */
+.header-logo img {
+  display: block;
+  height: auto;
   max-height: var(--logo-h-desktop);
-  width:auto;
+  width: auto;
   object-fit: contain;
   image-rendering: auto;
+  margin-top: -3px; /* keeps perfect optical balance with menu */
 }
 
-/* Keep nav tight to the right */
-.raising-nav{ margin-left:auto; }
+/* Logo container */
+.header-logo {
+  display: flex;
+  align-items: center;
+}
 
-/* Responsive tweaks */
-@media (max-width: 991px){
-  .header-logo img{ max-height: var(--logo-h-tablet); }
-  .header-logo a{ border-radius: 10px; }
+/* Navbar text */
+.navbar a {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #bdbdbd;
+  transition: color 0.3s ease;
 }
-@media (max-width: 767px){
-  .header-logo img{ max-height: var(--logo-h-mobile); }
-  .header-logo a{ padding: 4px 8px; border-radius: 10px; }
+
+.navbar a:hover,
+.navbar a.active {
+  color: #ff5722;
 }
-background: rgba(255,255,255,.06);
