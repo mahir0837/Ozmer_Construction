@@ -4042,3 +4042,56 @@ ol, ul {
     background-color: #fff;
 }
 
+/* === Ozmer: logo badge + header polish === */
+:root{
+  --logo-h-desktop: 52px;
+  --logo-h-tablet: 44px;
+  --logo-h-mobile: 36px;
+  --logo-pad-y: 6px;
+  --logo-pad-x: 10px;
+}
+
+/* Slightly richer header so the badge blends */
+.header{
+  background: linear-gradient(180deg, #171717, #1c1c1c);
+  box-shadow: 0 1px 0 rgba(255,255,255,.05), 0 8px 24px rgba(0,0,0,.25);
+  padding: 10px 0;
+}
+.header__inner{ display:flex; align-items:center; gap:18px; }
+
+/* Badge wrapper */
+.header-logo a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: var(--logo-pad-y) var(--logo-pad-x);
+  border-radius: 12px;
+  background: rgba(255,255,255,.06);                 /* subtle translucent card */
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,.25) inset, 0 2px 10px rgba(0,0,0,.15);
+  backdrop-filter: saturate(130%) blur(2px);
+}
+
+/* Image sizing (keeps aspect ratio) */
+.header-logo img{
+  display:block;
+  height:auto;
+  max-height: var(--logo-h-desktop);
+  width:auto;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+/* Keep nav tight to the right */
+.raising-nav{ margin-left:auto; }
+
+/* Responsive tweaks */
+@media (max-width: 991px){
+  .header-logo img{ max-height: var(--logo-h-tablet); }
+  .header-logo a{ border-radius: 10px; }
+}
+@media (max-width: 767px){
+  .header-logo img{ max-height: var(--logo-h-mobile); }
+  .header-logo a{ padding: 4px 8px; border-radius: 10px; }
+}
+background: rgba(255,255,255,.06);
