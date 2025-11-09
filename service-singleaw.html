@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A&amp;W Project — Ozmer Construction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Fonts-->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/pe-icon/pe-icon.css">
+    <!-- Vendors-->
+    <link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap/grid.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/swiper/swiper.css">
+    <!-- App & fonts-->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,600|Playfair+Display:400i">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+
+<body>
+<!-- preload -->
+<div class="preload" id="preload">
+    <div class="cssload-spin-box"></div>
+</div>
+<!-- End / preload -->
+
+<div class="page-wrap">
+    <!-- header -->
+    <header class="header header-fixheight header--fixed">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header-logo">
+                    <a href="index.html"><img src="assets/img/logo_white.png" alt="Ozmer Construction"/></a>
+                </div>
+
+                <!-- raising-nav -->
+                <nav class="raising-nav">
+                    <ul class="raising-menu">
+                        <li><a href="index.html#id1">Home</a></li>
+                        <li><a href="index.html#id2">About</a></li>
+                        <li class="current"><a href="index.html#id3">Services</a></li>
+                        <li><a href="index.html#id4">Gallery</a></li>
+                        <li><a href="index.html#id5">Testimonial</a></li>
+                        <li><a href="index.html#id6">Team</a></li>
+                        <li><a href="index.html#id7">Contact Us</a></li>
+                    </ul>
+                    <div class="navbar-toggle"><i class="fa fa-bars"></i></div>
+                </nav>
+                <!-- End / raising-nav -->
+
+                <div class="btn-right">
+                    <div class="search-btn"><i class="fa fa-search"></i></div>
+                </div>
+                <div class="searchbar">
+                    <div class="searchbar__group">
+                        <span class="searchbar__addon"><i class="fa fa-search"></i></span>
+                        <input class="searchbar__input" type="text" name="search" placeholder="Search"/>
+                        <span class="searchbar__close"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Match Otter Creek slider styling -->
+        <style>
+            /* Center the slider with a sensible max width */
+            .project-slider {
+              max-width: 1100px;
+              margin: 0 auto 24px;
+              position: relative;
+            }
+
+            /* Consistent banner height (responsive) */
+            .project-slider .swiper-slide {
+              height: clamp(200px, 28vw, 360px);
+              border-radius: 10px;
+              overflow: hidden;
+              box-shadow: 0 6px 18px rgba(0,0,0,.08);
+              background: #f5f5f5;
+            }
+
+            .project-slider .slide-img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;   /* show full image nicely */
+              object-position: center;
+              display: block;
+            }
+
+            /* Arrows */
+            .project-slider .swiper-button-custom > div {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              z-index: 2;
+              width: 40px; height: 40px; line-height: 40px;
+              background: rgba(0,0,0,.35);
+              color: #fff;
+              border-radius: 50%;
+              text-align: center;
+              transition: background .2s ease, transform .2s ease;
+            }
+            .project-slider .swiper-button-prev-custom { left: 16px; }
+            .project-slider .swiper-button-next-custom { right: 16px; }
+            .project-slider .swiper-button-custom > div:hover {
+              background: rgba(0,0,0,.5);
+              transform: translateY(-50%) scale(1.04);
+            }
+
+            .project-slider .swiper-pagination-custom { margin-top: 10px; }
+
+            @media (max-width: 480px) {
+              .project-slider .swiper-slide { height: clamp(240px, 52vw, 480px); }
+            }
+        </style>
+    </header>
+    <!-- End / header -->
+
+    <!-- Content-->
+    <div class="md-content">
+
+        <!-- hero (single) -->
+        <section class="md-section" style="padding: 80px 0 40px; background-color:#111; color:#fff;">
+            <div class="container">
+                <h1 class="hero__title" style="margin-bottom:10px;">A&amp;W Project</h1>
+                <p class="hero__desc" style="max-width:860px;">
+                    Complete commercial build-out including structural, MEP coordination, brand-standard finishes, and interior/exterior signage installation.
+                </p>
+                <p style="opacity:.8; margin-top:10px;">
+                    <i class="fa fa-map-marker"></i> Greater Toronto Area &nbsp;&nbsp;|&nbsp;&nbsp;
+                    <i class="fa fa-calendar"></i> 2025 &nbsp;&nbsp;|&nbsp;&nbsp;
+                    <i class="fa fa-clock-o"></i> Delivered on schedule
+                </p>
+            </div>
+        </section>
+        <!-- /hero -->
+
+        <!-- gallery slider (same format as Otter Creek) -->
+        <section class="md-section" style="background:#fff; padding-top:30px;">
+            <div class="container">
+                <div class="swiper swiper-container project-slider"
+                     data-options='{"slidesPerView":1,"spaceBetween":10,"pagination":{"el":".swiper-pagination-custom","clickable":true},"navigation":{"nextEl":".swiper-button-next-custom","prevEl":".swiper-button-prev-custom"}}'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class="slide-img" src="assets/img/projects/A%26WAfter.jpg" alt="A&amp;W After">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="slide-img" src="assets/img/projects/A%26W1.jpg" alt="A&amp;W 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="slide-img" src="assets/img/projects/A%26W2.jpg" alt="A&amp;W 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="slide-img" src="assets/img/projects/A%26W3.jpg" alt="A&amp;W 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="slide-img" src="assets/img/projects/A%26W4.jpg" alt="A&amp;W 4">
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination-custom"></div>
+                    <div class="swiper-button-custom">
+                        <div class="swiper-button-prev-custom"><i class="fa fa-angle-left"></i></div>
+                        <div class="swiper-button-next-custom"><i class="fa fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /gallery slider -->
+
+        <!-- details -->
+        <section id="aw-project" class="md-section" style="background-color:#fff; padding: 40px 0 10px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- sec-title -->
+                        <div class="sec-title sec-title__lg-title">
+                            <h2 class="sec-title__title">Project Overview</h2>
+                            <span class="sec-title__divider"></span>
+                        </div>
+                        <p>
+                            We successfully delivered a complete build-out for the A&amp;W project, covering both exterior and
+                            interior construction. From structural work to detailed finishes, our team ensured the project
+                            reflected the brand’s quality and standards while meeting strict timelines.
+                        </p>
+                        <p>
+                            Scope included demolition and site prep, new partitions, flooring, millwork, lighting, equipment
+                            coordination, mechanical/electrical integration, exterior façade refresh, and branded signage install.
+                            All work was coordinated around strict health &amp; safety standards and landlord requirements.
+                        </p>
+
+                        <div class="row" style="margin-top:25px;">
+                            <div class="col-sm-6">
+                                <h4>Key Deliverables</h4>
+                                <ul class="list-arrow">
+                                    <li>Full interior fit-out &amp; finishes</li>
+                                    <li>Kitchen &amp; service line integration</li>
+                                    <li>Brand signage &amp; menu systems</li>
+                                    <li>Exterior façade refresh</li>
+                                    <li>MEP coordination &amp; inspections</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4>Results</h4>
+                                <ul class="list-arrow">
+                                    <li>On-time handover</li>
+                                    <li>Passed all inspections first time</li>
+                                    <li>Consistent with A&amp;W brand standards</li>
+                                    <li>Reduced store downtime</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="md-hr" style="margin:30px 0;"></div>
+
+                        <h3>Client Comment</h3>
+                        <blockquote class="quote">
+                            <p>
+                                “Ozmer Construction delivered exactly what we needed—quality workmanship, clear communication, and an
+                                on-time opening. The space looks fantastic and matches our brand perfectly.”
+                            </p>
+                            <footer>— A&amp;W Operations Lead</footer>
+                        </blockquote>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="sidebar">
+                            <!-- widget -->
+                            <section class="widget">
+                                <div class="sec-title">
+                                    <h2 class="sec-title__title">Project Facts</h2>
+                                    <span class="sec-title__divider"></span>
+                                </div>
+                                <div class="widget-contact__item">
+                                    <span class="widget-contact__title">Client:</span>
+                                    <p class="widget-contact__text">A&amp;W</p>
+                                </div>
+                                <div class="widget-contact__item">
+                                    <span class="widget-contact__title">Type:</span>
+                                    <p class="widget-contact__text">Commercial Fit-Out</p>
+                                </div>
+                                <div class="widget-contact__item">
+                                    <span class="widget-contact__title">Services:</span>
+                                    <p class="widget-contact__text">General Contracting, Interiors, Exteriors</p>
+                                </div>
+                                <div class="widget-contact__item">
+                                    <span class="widget-contact__title">Location:</span>
+                                    <p class="widget-contact__text">GTA, Ontario</p>
+                                </div>
+                                <div class="widget-contact__item">
+                                    <span class="widget-contact__title">Duration:</span>
+                                    <p class="widget-contact__text">Planned &amp; delivered on schedule</p>
+                                </div>
+                                <a class="btn btn-primary btn-custom" href="index.html#id7" style="margin-top:10px;">Request a Quote</a>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /details -->
+
+        <!-- cta -->
+        <section class="cta-02">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h3 class="cta-02__title">Have a branded fit-out or renovation in mind?</h3>
+                    </div>
+                    <div class="col-lg-3 md-text-right">
+                        <a class="btn btn-outline" href="index.html#id7">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /cta -->
+
+    </div>
+    <!-- End / Content-->
+
+    <!-- footer -->
+    <footer class="footer-01 md-skin-dark">
+        <div class="footer-01__widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <section class="widget">
+                            <div class="sec-title">
+                                <h2 class="sec-title__title">about us</h2><span class="sec-title__divider"></span>
+                            </div>
+                            <p>We build commercial and residential spaces with durable exteriors and refined interiors—delivered on time and with care.</p>
+                        </section>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6">
+                        <section class="widget">
+                            <div class="sec-title">
+                                <h2 class="sec-title__title">working hours</h2><span class="sec-title__divider"></span>
+                            </div>
+                            <p>Questions about your project? We’re here to help.</p>
+
+                            <div>
+                                <div class="widget-contact__item">
+                                    <span class="widget-contact__title">Tel:</span>
+                                    <p class="widget-contact__text">+1 416 995 6403</p>
+                                </div>
+                                <div class="widget-contact__item">
+                                    <span class="widget-contact__title">email:</span>
+                                    <p class="widget-contact__text">
+                                        <a href="mailto:ozmerconstruction@gmail.com">ozmerconstruction@gmail.com</a>
+                                    </p>
+                                </div>
+                                <div class="widget-contact__item">
+                                    <span class="widget-contact__title">Working Hours</span>
+                                    <p class="widget-contact__text">Mon - Sat: 9:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-01 md-text-center">
+            <div class="container">
+                <p class="copyright-01__copy">2018 &copy; Copyright VeraTechSupport. All rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Vendors-->
+<script type="text/javascript" src="assets/vendors/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
+<script type="text/javascript" src="assets/vendors/isotope-layout/isotope.pkgd.js"></script>
+<script type="text/javascript" src="assets/vendors/jquery.matchHeight/jquery.matchHeight.min.js"></script>
+<script type="text/javascript" src="assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="assets/vendors/masonry-layout/masonry.pkgd.js"></script>
+<script type="text/javascript" src="assets/vendors/swiper/swiper.jquery.js"></script>
+<script type="text/javascript" src="assets/vendors/jquery-one-page/jquery.nav.js"></script>
+<script type="text/javascript" src="assets/vendors/menu/menu.js"></script>
+<script type="text/javascript" src="assets/vendors/jquery.waypoints/jquery.waypoints.min.js"></script>
+<!-- App-->
+<script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html>
