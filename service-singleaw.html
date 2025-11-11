@@ -27,15 +27,19 @@
 
 <div class="page-wrap">
     <!-- header -->
+    <!-- header -->
     <header class="header header-fixheight header--fixed">
         <div class="container">
-            <div class="header__inner">
+            <div class="header__inner" role="navigation" aria-label="Main">
+                <!-- LOGO (left) -->
                 <div class="header-logo">
-                    <a href="index.html"><img src="assets/img/FatihLogo1.png" alt="Ozmer Construction"/></a>
+                    <a href="index.html" aria-label="Go to homepage">
+                        <img src="assets/img/FatihLogo1.png" alt="Ozmer Construction"/>
+                    </a>
                 </div>
 
-                <!-- raising-nav -->
-                <nav class="raising-nav">
+                <!-- NAV (center on desktop, holds hamburger on the right on mobile) -->
+                <nav class="raising-nav" aria-label="Primary">
                     <ul class="raising-menu">
                         <li><a href="index.html#id1">Home</a></li>
                         <li><a href="index.html#id2">About</a></li>
@@ -45,76 +49,93 @@
                         <li><a href="index.html#id6">Team</a></li>
                         <li><a href="index.html#id7">Contact Us</a></li>
                     </ul>
-                    <div class="navbar-toggle"><i class="fa fa-bars"></i></div>
+                    <!-- Hamburger (right) -->
+                    <button class="navbar-toggle" aria-label="Open menu" type="button">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
                 </nav>
-                <!-- End / raising-nav -->
 
-                <div class="btn-right">
-                    <div class="search-btn"><i class="fa fa-search"></i></div>
-                </div>
-                <div class="searchbar">
-                    <div class="searchbar__group">
-                        <span class="searchbar__addon"><i class="fa fa-search"></i></span>
-                        <input class="searchbar__input" type="text" name="search" placeholder="Search"/>
-                        <span class="searchbar__close"></span>
-                    </div>
-                </div>
+                <!-- Optional search (sits before hamburger visually on wide screens) -->
             </div>
         </div>
 
-        <!-- Match Otter Creek slider styling -->
+        <!-- Inline, header-only adjustments -->
         <style>
-            /* Center the slider with a sensible max width */
-            .project-slider {
-              max-width: 1100px;
-              margin: 0 auto 24px;
-              position: relative;
+            /* Make the header row a strong flex line with a big (~4cm) gap */
+            .header .header__inner{
+              display:flex !important;
+              align-items:center !important;
+              justify-content:space-between !important;
+              flex-wrap:nowrap !important;
+              column-gap:160px !important; /* ≈4 cm */
+              padding:18px 44px !important;
             }
 
-            /* Consistent banner height (responsive) */
-            .project-slider .swiper-slide {
-              height: clamp(200px, 28vw, 360px);
-              border-radius: 10px;
-              overflow: hidden;
-              box-shadow: 0 6px 18px rgba(0,0,0,.08);
-              background: #f5f5f5;
+            /* Logo always first/left */
+            .header .header__inner .header-logo{
+              order:-1 !important;
+              margin-right:auto !important;
+              flex:0 0 auto !important;
+              display:flex !important; align-items:center !important;
+              min-width:0 !important;
+            }
+            .header .header__inner .header-logo img{
+              display:block !important;
+              max-height:130px !important; width:auto !important; object-fit:contain !important;
+              filter:brightness(1.15) contrast(1.05);
             }
 
-            .project-slider .slide-img {
-              width: 100%;
-              height: 100%;
-              object-fit: contain;   /* show full image nicely */
-              object-position: center;
-              display: block;
+            /* Nav sits between logo and the right side; hamburger inside nav at the end */
+            .header .header__inner .raising-nav{
+              order:0 !important; flex:0 1 auto !important; min-width:0 !important;
+              display:flex !important; align-items:center !important; gap:18px !important;
+              margin-left:auto !important;
+            }
+            .raising-nav .raising-menu{ order:0 !important; }
+            .raising-nav .navbar-toggle{ order:99 !important; }
+
+            /* Keep search controls near the right, before the hamburger block */
+            .header .header__inner .btn-right{
+              order:98 !important; flex:0 0 auto !important;
             }
 
-            /* Arrows */
-            .project-slider .swiper-button-custom > div {
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              z-index: 2;
-              width: 40px; height: 40px; line-height: 40px;
-              background: rgba(0,0,0,.35);
-              color: #fff;
-              border-radius: 50%;
-              text-align: center;
-              transition: background .2s ease, transform .2s ease;
+            /* Neutralize absolute positioning that pulls hamburger out of flow */
+            .header .navbar-toggle{
+              position:static !important; top:auto !important; right:auto !important;
+              transform:none !important;
+              width:36px !important; height:36px !important; line-height:36px !important;
+              text-align:center !important; background:#111 !important; color:#fff !important;
+              border-radius:8px !important; margin-left:8px !important; cursor:pointer !important;
             }
-            .project-slider .swiper-button-prev-custom { left: 16px; }
-            .project-slider .swiper-button-next-custom { right: 16px; }
-            .project-slider .swiper-button-custom > div:hover {
-              background: rgba(0,0,0,.5);
-              transform: translateY(-50%) scale(1.04);
+            .header .navbar-toggle i{ font-size:16px !important; line-height:1 !important; pointer-events:none !important; }
+
+            /* Keep the slide-in mobile menu docking from the right */
+            @media (max-width:1200px){
+              .raising-nav .raising-menu{
+                right:0 !important; left:auto !important;
+                transform:translate(100%,0); /* hidden */
+              }
+              .raising-nav .raising-menu.active{ transform:translate(0,0); } /* shown */
             }
 
-            .project-slider .swiper-pagination-custom { margin-top: 10px; }
-
-            @media (max-width: 480px) {
-              .project-slider .swiper-slide { height: clamp(240px, 52vw, 480px); }
+            /* Responsive spacing + logo scaling */
+            @media (max-width:1024px){
+              .header .header__inner{ column-gap:120px !important; padding:14px 34px !important; }
+              .header .header-logo img{ max-height:100px !important; }
+              .header .raising-nav{ gap:16px !important; }
+            }
+            @media (max-width:768px){
+              .header .header__inner{ column-gap:80px !important; padding:10px 22px !important; }
+              .header .header-logo img{ max-height:80px !important; }
+            }
+            @media (max-width:480px){
+              .header .header__inner{ column-gap:50px !important; }
+              .header .header-logo img{ max-height:68px !important; }
             }
         </style>
     </header>
+    <!-- End / header -->
+
     <!-- End / header -->
 
     <!-- Content-->
